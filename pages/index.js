@@ -30,7 +30,7 @@ const Home = () => {
   }
 
   const handleNextClick = () => {
-    if(currIndex < concatOutput.length - 2){
+    if(currIndex < (2 * concatOutput.length) - 1){
       setCurrIndex(currIndex + 1)
     }
   };
@@ -76,7 +76,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="output-content">
-                    <p className="output-header">{concatOutput[currIndex]}</p>
+                    <p>{concatOutput[currIndex]}</p>
                     <button onClick={() => handleNextClick()}>Next</button>
                   </div>
                 </div>
