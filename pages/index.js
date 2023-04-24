@@ -38,10 +38,10 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>AI Email Generator</h1>
+            <h1>AI Study Tool</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Forgot to submit your paper? Have a robot gaslight your teacher for you.</h2>
+            <h2>Paste your class notes, and I will quiz you on the material you provide</h2>
           </div>
         </div>
         <div className="prompt-container">
