@@ -29,8 +29,10 @@ const Home = () => {
     setIsGenerating(false);
   }
 
-  const handleNextClick = (index) => {
-    setCurrIndex(index + 1);
+  const handleNextClick = () => {
+    if(currIndex < concatOutput.length - 2){
+      setCurrIndex(currIndex + 1)
+    }
   };
 
   const onUserChangedText = (event) => {
@@ -75,8 +77,7 @@ const Home = () => {
                   </div>
                   <div className="output-content">
                     <p className="output-header">{concatOutput[currIndex]}</p>
-                    <button onClick={() => setCurrIndex(currIndex+1)}>Next</button>
-                    <p className="output-header"> {currIndex}</p>
+                    <button onClick={() => handleNextClick()}>Next</button>
                   </div>
                 </div>
             )}
