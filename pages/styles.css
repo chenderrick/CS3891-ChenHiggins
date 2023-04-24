@@ -169,6 +169,12 @@ textarea {
     color: rgba(255, 255, 255, 0.25)
 }
 
+.next-button {
+    border-radius: 100px;
+    background-color: darkolivegreen;
+    border-color: white;
+}
+
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;

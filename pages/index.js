@@ -77,7 +77,7 @@ const Home = () => {
                   </div>
                   <div className="output-content">
                     <p>{concatOutput[currIndex]}</p>
-                    <button onClick={() => handleNextClick()}>Next</button>
+                    <button className = "next-button" onClick={() => handleNextClick()}>Next</button>
                   </div>
                 </div>
             )}
