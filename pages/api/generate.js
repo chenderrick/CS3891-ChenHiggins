@@ -8,8 +8,10 @@ const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix =
 `
-Using the class notes provided, create a short quiz of questions and answers to help study for an exam on the given material. Use multiple choice style questions.
-
+Using the class notes provided, create a short quiz with multiple questions and answers to help study for an exam on the given material. 
+Use multiple choice style questions.
+The generated questions and options should be separated by new lines and start with Q for questions and A,B,C,D for each option
+After each group of question and answer options, print a full line of asterisks
 Notes:
 `
 const generateAction = async (req, res) => {
