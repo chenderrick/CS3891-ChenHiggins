@@ -6,6 +6,7 @@ const Home = () => {
   const [apiOutput, setApiOutput] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
   const [concatOutput, setConcatOutput] = useState([])
+  const [currIndex, setCurrIndex] = useState(0)
 
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
@@ -29,7 +30,7 @@ const Home = () => {
   }
 
   const handleNextClick = (index) => {
-    setCurrentElementIndex(index + 1);
+    setCurrIndex(index + 1);
   };
 
   const onUserChangedText = (event) => {
@@ -73,11 +74,9 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="output-content">
-                    <CreateFlashcard
-                        concatOutput={concatOutput}
-                        onNextClick={handleNextClick}
-                        setCurrentElementIndex={setCurrentElementIndex}
-                    />
+                    <p className="output-header">{concatOutput[currIndex]}</p>
+                    <button onClick={() => setCurrIndex(currIndex+1)}>Next</button>
+                    <p className="output-header"> {currIndex}</p>
                   </div>
                 </div>
             )}
@@ -87,33 +86,5 @@ const Home = () => {
   );
 };
 
-const CreateFlashcard = ({ concatOutput, onNextClick, currElementIndex }) => {
-  /*const [indexStay, setIndexStay] = useState(currElementIndex)
-  const [indexGo, setIndexGo] = useState(currElementIndex)
-
-  const handleNextClick = () => {
-    if(indexGo < concatOutput.length -1){
-
-    }
-  }*/
-
-
-  const [currentElementIndexLocal, setCurrentElementIndexLocal] = useState(currElementIndex);
-
-  const handleNextClick = () => {
-    if (currentElementIndex < concatOutput.length - 1) {
-      setCurrentElementIndexLocal(currentElementIndex + 1);
-      onNextClick(currentElementIndex + 1);
-      setCurrentElementIndex(currentElementIndex + 1);
-    }
-  };
-
-  return (
-      <div>
-        <p>{concatOutput[currentElementIndexLocal]}</p>
-        <button onClick={handleNextClick}>Next</button>
-      </div>
-  );
-};
 
 export default Home;
